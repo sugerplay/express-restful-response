@@ -1,0 +1,24 @@
+{
+  "name": "express-restful-response",
+  "version": "0.0.2",
+  "description": "Very simple way to response restfuly for express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sugerplay/express-restful-response.git"
+  },
+  "keywords": [
+    "express",
+    "restful",
+    "response"
+  ],
+  "author": "sugerplay",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sugerplay/express-restful-response/issues"
+  },
+  "homepage": "https://github.com/sugerplay/express-restful-response"
+}

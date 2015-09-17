@@ -1,0 +1,103 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/ubuntu/.nvm/v0.10.35/bin/node',
+1 verbose cli   '/home/ubuntu/.nvm/v0.10.35/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.35
+4 verbose publish [ '.' ]
+5 verbose cache add [ '.', null ]
+6 verbose cache add name=undefined spec="." args=[".",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: '.',
+7 verbose parsed url   path: '.',
+7 verbose parsed url   href: '.' }
+8 silly lockFile 3a52ce78- .
+9 verbose lock . /home/ubuntu/.npm/3a52ce78-.lock
+10 verbose tar pack [ '/home/ubuntu/.npm/express-restful-response/0.0.1/package.tgz',
+10 verbose tar pack   '.' ]
+11 verbose tarball /home/ubuntu/.npm/express-restful-response/0.0.1/package.tgz
+12 verbose folder .
+13 info prepublish express-restful-response@0.0.1
+14 silly lockFile 1f1177db-tar tar://.
+15 verbose lock tar://. /home/ubuntu/.npm/1f1177db-tar.lock
+16 silly lockFile c7dca0c4-stful-response-0-0-1-package-tgz tar:///home/ubuntu/.npm/express-restful-response/0.0.1/package.tgz
+17 verbose lock tar:///home/ubuntu/.npm/express-restful-response/0.0.1/package.tgz /home/ubuntu/.npm/c7dca0c4-stful-response-0-0-1-package-tgz.lock
+18 silly lockFile 1f1177db-tar tar://.
+19 silly lockFile 1f1177db-tar tar://.
+20 silly lockFile c7dca0c4-stful-response-0-0-1-package-tgz tar:///home/ubuntu/.npm/express-restful-response/0.0.1/package.tgz
+21 silly lockFile c7dca0c4-stful-response-0-0-1-package-tgz tar:///home/ubuntu/.npm/express-restful-response/0.0.1/package.tgz
+22 silly lockFile 77a6fa08-s-restful-response-0-0-1-package /home/ubuntu/.npm/express-restful-response/0.0.1/package
+23 verbose lock /home/ubuntu/.npm/express-restful-response/0.0.1/package /home/ubuntu/.npm/77a6fa08-s-restful-response-0-0-1-package.lock
+24 silly lockFile 77a6fa08-s-restful-response-0-0-1-package /home/ubuntu/.npm/express-restful-response/0.0.1/package
+25 silly lockFile 77a6fa08-s-restful-response-0-0-1-package /home/ubuntu/.npm/express-restful-response/0.0.1/package
+26 silly lockFile 3a52ce78- .
+27 silly lockFile 3a52ce78- .
+28 silly publish { name: 'express-restful-response',
+28 silly publish   version: '0.0.1',
+28 silly publish   description: 'Very simple way to response restfuly for express',
+28 silly publish   main: 'index.js',
+28 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+28 silly publish   repository:
+28 silly publish    { type: 'git',
+28 silly publish      url: 'https://github.com/sugerplay/express-restful-response.git' },
+28 silly publish   keywords: [ 'express', 'restful', 'response' ],
+28 silly publish   author: { name: 'sugerplay' },
+28 silly publish   license: 'MIT',
+28 silly publish   bugs: { url: 'https://github.com/sugerplay/express-restful-response/issues' },
+28 silly publish   homepage: 'https://github.com/sugerplay/express-restful-response',
+28 silly publish   readme: '# express-restful-response\nVery simple way to response restfuly for express.\n\n## Usage\n\n```js\nvar express = require(\'express\')\nvar app = express()\nvar response = require("../modules/express-restful-response.js").response\n\napp.get(\'/\', function (req, res) {\n    var output = {};\n    \n    ...\n    \n    response(res, output, {\n        status_code: 200,\n        status_msg: \'Success!\'\n    })\n})\n```\n\n## Options\n\n```js\nresponse(res, output, {\n    status_code: 200,\n    status_msg: undefined,\n    jsonp: false\n})\n```\n\n## Status codes\n\n* 100: Continue\n* 101: Switching_Protocols\n\n* 200: OK\n* 201: Created\n* 202: Accepted\n* 203: Non_Authoritative_Information\n* 204: No_Content\n* 205: Reset_Content\n* 206: Partial_Content\n* 207: Multi_Status\n\n* 300: Multiple_Choices\n* 301: Moved_Permanently\n* 302: Found\n* 303: See_Other\n* 304: Not_Modified\n* 305: Use_Proxy\n* 306: Reserved\n* 307: Temporary_Redirect\n\n* 400: Bad_Request\n* 401: Unauthorized\n* 402: Payment_Required\n* 403: Forbidden\n* 404: Not_Found\n* 405: Method_Not_Allowed\n* 406: Not_Acceptable\n* 407: Proxy_Authentication\n* 408: Request_Timeout\n* 409: Conflict\n* 410: Gone\n* 411: Length_Required\n* 412: Precondition_Failed\n* 413: Request_Entity_Too_Large\n* 414: Request_URI_Too_Long\n* 415: Unsupported_Media_Type\n* 416: Requested_Range_Not_Satisfiable\n* 417: Expectation_Failed\n* 422: Unprocessable_Entity\n* 423: Locked\n* 424: Failed_Dependency\n\n* 500: Internal_Server_Error\n* 501: Not_Implemented\n* 502: Bad_Gateway\n* 503: Service_Unavailable\n* 504: Gateway_Timeout\n* 505: HTTP_Version_Not_Supported\n* 507: Insufficient_Storage',
+28 silly publish   readmeFilename: 'README.md',
+28 silly publish   gitHead: '7620ca3692c21cffd0910fb4ddeb1065226fc6c6',
+28 silly publish   _id: 'express-restful-response@0.0.1',
+28 silly publish   _shasum: '5a21eb339d26988c9163273b77eb15ed160c2b4b',
+28 silly publish   _from: '.' }
+29 verbose request where is /express-restful-response
+30 verbose request registry https://registry.npmjs.org/
+31 verbose request id 3683725a713dceae
+32 verbose url raw /express-restful-response
+33 verbose url resolving [ 'https://registry.npmjs.org/', './express-restful-response' ]
+34 verbose url resolved https://registry.npmjs.org/express-restful-response
+35 verbose request where is https://registry.npmjs.org/express-restful-response
+36 info trying registry request attempt 1 at 16:05:23
+37 http PUT https://registry.npmjs.org/express-restful-response
+38 http 403 https://registry.npmjs.org/express-restful-response
+39 verbose headers { 'content-type': 'application/json',
+39 verbose headers   'cache-control': 'max-age=60',
+39 verbose headers   'content-length': '95',
+39 verbose headers   'accept-ranges': 'bytes',
+39 verbose headers   date: 'Thu, 17 Sep 2015 16:05:24 GMT',
+39 verbose headers   via: '1.1 varnish',
+39 verbose headers   connection: 'keep-alive',
+39 verbose headers   'x-served-by': 'cache-hkg6825-HKG',
+39 verbose headers   'x-cache': 'MISS',
+39 verbose headers   'x-cache-hits': '0',
+39 verbose headers   'x-timer': 'S1442505923.172461,VS0,VE972' }
+40 error publish Failed PUT 403
+41 error Error: "You cannot publish over the previously published version 0.0.1." : express-restful-response
+41 error     at RegClient.<anonymous> (/home/ubuntu/.nvm/v0.10.35/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:308:14)
+41 error     at Request._callback (/home/ubuntu/.nvm/v0.10.35/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:246:65)
+41 error     at Request.self.callback (/home/ubuntu/.nvm/v0.10.35/lib/node_modules/npm/node_modules/request/request.js:236:22)
+41 error     at Request.emit (events.js:98:17)
+41 error     at Request.<anonymous> (/home/ubuntu/.nvm/v0.10.35/lib/node_modules/npm/node_modules/request/request.js:1142:14)
+41 error     at Request.emit (events.js:117:20)
+41 error     at IncomingMessage.<anonymous> (/home/ubuntu/.nvm/v0.10.35/lib/node_modules/npm/node_modules/request/request.js:1096:12)
+41 error     at IncomingMessage.emit (events.js:117:20)
+41 error     at _stream_readable.js:944:16
+41 error     at process._tickCallback (node.js:442:13)
+42 error If you need help, you may report this *entire* log,
+42 error including the npm and node versions, at:
+42 error     <http://github.com/npm/npm/issues>
+43 error System Linux 3.14.13-c9
+44 error command "/home/ubuntu/.nvm/v0.10.35/bin/node" "/home/ubuntu/.nvm/v0.10.35/bin/npm" "publish"
+45 error cwd /home/ubuntu/workspace
+46 error node -v v0.10.35
+47 error npm -v 1.4.28
+48 verbose exit [ 1, true ]
