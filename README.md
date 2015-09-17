@@ -4,9 +4,9 @@ Very simple way to response restfuly for express.
 ## Usage
 
 ```js
-var response = require("../modules/express-restful-response.js")
 var express = require('express')
 var app = express()
+var response = require("../modules/express-restful-response.js").response
 
 app.get('/', function (req, res) {
     var output = {};
