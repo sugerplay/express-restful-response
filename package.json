@@ -1,10 +1,10 @@
 {
   "name": "express-restful-response",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Very simple way to response restfuly for express",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "make test"
   },
   "repository": {
     "type": "git",
@@ -29,8 +29,5 @@
   },
   "engines": {
     "node": ">=0.10.35"
-  },
-  "scripts": {
-    "test": "make test"
   }
 }
