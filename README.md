@@ -6,7 +6,7 @@ Very simple way to response restfuly for express.
 ```js
 var express = require('express')
 var app = express()
-var response = require("../modules/express-restful-response.js").response
+var response = require('express-restful-response').response
 
 app.get('/', function (req, res) {
     var output = {};
