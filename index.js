@@ -21,6 +21,8 @@ exports.response = function (res, output, options) {
     options.encoding;
     
     if (typeof options.status_msg !== 'undefined') {
+        if (typeof output !== 'Object')
+            output = {};
         output.message = options.status_msg;
     }
     

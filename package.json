@@ -1,6 +1,6 @@
 {
   "name": "express-restful-response",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Very simple way to response restfuly for express",
   "main": "index.js",
   "scripts": {
@@ -20,5 +20,17 @@
   "bugs": {
     "url": "https://github.com/sugerplay/express-restful-response/issues"
   },
-  "homepage": "https://github.com/sugerplay/express-restful-response"
+  "homepage": "https://github.com/sugerplay/express-restful-response",
+  "devDependencies": {
+    "mocha": ">=1.8.1",
+    "should": ">=1.2.1",
+    "express": ">4.0.0",
+    "zombie": "<2.0.0"
+  },
+  "engines": {
+    "node": ">=0.10.35"
+  },
+  "scripts": {
+    "test": "make test"
+  }
 }

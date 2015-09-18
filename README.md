@@ -1,6 +1,18 @@
 # express-restful-response
 Very simple way to response restfuly for express.
 
+## Install
+
+```js
+npm install express-restful-response
+```
+
+## Test
+
+```js
+npm test
+```
+
 ## Usage
 
 ```js
