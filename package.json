@@ -1,6 +1,6 @@
 {
   "name": "express-restful-response",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Very simple way to response restfuly for express",
   "main": "index.js",
   "scripts": {
