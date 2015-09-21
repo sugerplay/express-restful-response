@@ -11,30 +11,35 @@ var setDefault = function (v, def) {
     return (typeof v === 'undefined')? def : v;
 };
     
-exports.response = function (res, output, options) {
-    options = setDefault(options, {});
-    options.status_code = setDefault(options.status_code, 200);
-    options.status_msg = setDefault(options.status_msg, undefined);
-    options.jsonp = setDefault(options.jsonp, false);
+exports.restfulEnd = function (req, res, next) {
     
-    // to do
-    options.encoding;
+    res.restfulEnd = function (output, options) {
+        options = setDefault(options, {});
+        options.status_code = setDefault(options.status_code, 200);
+        options.status_msg = setDefault(options.status_msg, undefined);
+        options.jsonp = setDefault(options.jsonp, false);
+        
+        // to do
+        options.encoding;
+        
+        if (typeof options.status_msg !== 'undefined') {
+            if (typeof output !== 'Object')
+                output = {};
+            output.message = options.status_msg;
+        }
+        
+        res.setHeader("Content-Type", "text/json; charset=utf-8");
+        res.status(options.status_code);
+        
+        if (options.jsonp) {
+            res.jsonp(output);
+        }
+        else {
+            res.end(JSON.stringify(output));
+        }
+    };
     
-    if (typeof options.status_msg !== 'undefined') {
-        if (typeof output !== 'Object')
-            output = {};
-        output.message = options.status_msg;
-    }
-    
-    res.setHeader("Content-Type", "text/json; charset=utf-8");
-    res.status(options.status_code);
-    
-    if (options.jsonp) {
-        res.jsonp(output);
-    }
-    else {
-        res.end(JSON.stringify(output));
-    }
+    next();
 }
 
 // Informational
