@@ -18,14 +18,16 @@ npm test
 ```js
 var express = require('express')
 var app = express()
-var response = require('express-restful-response').response
+var response = require('express-restful-response')
+
+app.use(response.restfulEnd)
 
 app.get('/', function (req, res) {
     var output = {};
     
     ...
     
-    response(res, output, {
+    res.restfulEnd(output, {
         status_code: 200,
         status_msg: 'Success!'
     })
@@ -35,7 +37,7 @@ app.get('/', function (req, res) {
 ## Options
 
 ```js
-response(res, output, {
+res.restfulEnd(output, {
     status_code: 200,
     status_msg: undefined,
     jsonp: false
