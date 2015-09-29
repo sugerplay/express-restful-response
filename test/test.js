@@ -19,21 +19,10 @@ describe('Using package in express 4.x', function() {
                 done();
             });
         });
-    });
-    
-    describe('Status-msg', function () {
-        it('should response with no status-msg', function (done) {
-            browser.visit('http://localhost:3000/correct', function () {
-                var result = JSON.parse(browser.text());
-                should.exist(result.message);
-                done();
-            });
-        });
         
-        it('should response status-msg', function (done) {
-            browser.visit('http://localhost:3000/network_error', function () {
-                var result = JSON.parse(browser.text());
-                should.not.exist(result.message);
+        it('should response no output for status-code 204', function (done) {
+            browser.visit('http://localhost:3000/no_content', function () {
+                should.equal(browser.text().length, 0);
                 done();
             });
         });
@@ -51,4 +40,5 @@ describe('Using package in express 4.x', function() {
             });
         });
     });
+    
 });

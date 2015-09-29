@@ -23,14 +23,15 @@ var response = require('express-restful-response')
 app.use(response.restfulEnd)
 
 app.get('/', function (req, res) {
-    var output = {};
-    
-    ...
-    
-    res.restfulEnd(output, {
-        status_code: 200,
-        status_msg: 'Success!'
-    })
+  var output = {
+    message: 'success!'
+  };
+  
+  ...
+  
+  res.restfulEnd(output, {
+    status_code: 200
+  })
 })
 ```
 
@@ -38,9 +39,8 @@ app.get('/', function (req, res) {
 
 ```js
 res.restfulEnd(output, {
-    status_code: 200,
-    status_msg: undefined,
-    jsonp: false
+  status_code: 200,     =>    status code
+  jsonp: false          =>    using for jsonp
 })
 ```
 

@@ -16,11 +16,7 @@ exports.restfulEnd = function (req, res, next) {
     res.restfulEnd = function (output, options) {
         options = setDefault(options, {});
         options.status_code = setDefault(options.status_code, 200);
-        options.status_msg = setDefault(options.status_msg, undefined);
         options.jsonp = setDefault(options.jsonp, false);
-        
-        // to do
-        options.encoding;
         
         if (typeof options.status_msg !== 'undefined') {
             if (typeof output !== 'Object')
@@ -28,7 +24,7 @@ exports.restfulEnd = function (req, res, next) {
             output.message = options.status_msg;
         }
         
-        res.setHeader("Content-Type", "text/json; charset=utf-8");
+        res.setHeader('Content-Type', 'text/json; charset=utf-8');
         res.status(options.status_code);
         
         if (options.jsonp) {
