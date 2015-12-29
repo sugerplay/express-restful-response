@@ -7,36 +7,94 @@
  *      status_msg: status message
  */
  
+var _ = require('underscore');
+ 
 var setDefault = function (v, def) {
-    return (typeof v === 'undefined')? def : v;
+  return (typeof v === 'undefined')? def : v;
 };
+
+exports.restfulEnd = function (options) {
+  options = setDefault(options, {});
     
-exports.restfulEnd = function (req, res, next) {
+  options.jsonp = setDefault(options.jsonp, false);
+  // options.codeAttribute = setDefault(options.codeAttribute, 'code');
+  options.header = setDefault(options.header, {});
+  
+  options.header = _.defaults(options.header, {
+    'Content-Type': 'application/json; charset=utf-8'
+  });
+
+  return function (req, res, next) {
     
-    res.restfulEnd = function (output, options) {
-        options = setDefault(options, {});
-        options.status_code = setDefault(options.status_code, 200);
-        options.jsonp = setDefault(options.jsonp, false);
-        
-        if (typeof options.status_msg !== 'undefined') {
-            if (typeof output !== 'Object')
-                output = {};
-            output.message = options.status_msg;
-        }
-        
-        res.setHeader('Content-Type', 'text/json; charset=utf-8');
-        res.status(options.status_code);
-        
-        if (options.jsonp) {
-            res.jsonp(output);
-        }
-        else {
-            res.end(JSON.stringify(output));
-        }
+    res.restfulEnd = function (status, output, opt) {
+      
+      if (!output || typeof output !== 'object') output = {};
+      if (!status) status = 200;
+      
+      opt = _.extend(options, opt);
+      
+      _.each(opt.header, function (v, type) {
+        res.setHeader(type, v);
+      })
+      
+      // res.setHeader('Content-Type', 'application/json; charset=utf-8');
+      res.status(status);
+      
+      if (opt.jsonp) {
+        res.jsonp(output);
+      }
+      else {
+        res.end(JSON.stringify(output));
+      }
+    };
+    
+    res.postEnd = function (output, location, opt) {
+      opt = _.extend(options, opt);
+      
+      opt.header = _.extend(opt.header, {
+        'Location': location
+      })
+      
+      return res.restfulEnd(201, output, opt);
     };
     
     next();
+  };
 }
+
+// exports.restfulEnd = function (options) {
+//   options = setDefault(options, {});
+    
+//   options.status_code = setDefault(options.status_code, 200);
+//   options.jsonp = setDefault(options.jsonp, false);
+//   options.codeAttribute = setDefault(options.codeAttribute, 'code');
+
+//   return function (req, res, next) {
+    
+//   res.restfulEnd = function (code, output, header) {
+    
+    
+//     if (typeof options.status_msg !== 'undefined') {
+//       if (typeof output !== 'Object')
+//         output = {};
+//       output.message = options.status_msg;
+//     }
+    
+//     res.setHeader('Content-Type', 'text/json; charset=utf-8');
+//     res.status(options.status_code);
+    
+//     if (options.jsonp) {
+//       res.jsonp(output);
+//     }
+//     else {
+//       res.end(JSON.stringify(output));
+//     }
+//   };
+  
+//   res.postSuccess(location, )
+  
+//   next();
+// }
 
 // Informational
 exports.Continue = 100;

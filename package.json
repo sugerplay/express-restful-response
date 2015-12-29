@@ -22,12 +22,15 @@
   },
   "homepage": "https://github.com/sugerplay/express-restful-response",
   "devDependencies": {
-    "mocha": ">=1.8.1",
-    "should": ">=1.2.1",
     "express": ">4.0.0",
+    "request": "^2.67.0",
+    "should": ">=1.2.1",
     "zombie": "<2.0.0"
   },
   "engines": {
     "node": ">=0.10.35"
+  },
+  "dependencies": {
+    "underscore": "^1.8.3"
   }
 }
